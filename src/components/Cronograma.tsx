@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'motion/react'
-import { Calendar, ChevronRight, Check, Circle } from 'lucide-react'
+import { Calendar, Check, Circle } from 'lucide-react'
 import { Section } from './Section'
 import { cronograma } from '../content/plano'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
