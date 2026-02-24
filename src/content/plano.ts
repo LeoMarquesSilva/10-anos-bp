@@ -7,7 +7,6 @@ export const visaoEstrategica = {
     'Consolidar a marca no mercado',
     'Humanizar a comunicação institucional',
     'Evidenciar impacto e resultados ao longo da trajetória',
-    'Integrar marketing, institucional e evento em uma narrativa única',
   ],
 }
 
@@ -17,10 +16,9 @@ export const bloco01 = {
     titulo: 'Lançamento da Identidade 10 Anos',
     texto: 'A identidade comemorativa será lançada oficialmente no Café com Cultura – Edição Especial 10 Anos, no mês de março.',
     proposta: [
-      'Evento com posicionamento institucional',
-      'Apresentação oficial do selo 10 anos',
-      'Exibição do vídeo institucional',
-      'Fala estratégica dos sócios',
+      'Fala estratégica dos sócios (Gustavo e Ricardo)',
+      'Exibição de vídeo institucional (Gravado em Março com Falas de Gustavo, Ricardo, Sócios e colaboradores)',
+      'Apresentação oficial do selo de 10 anos',
     ],
     conclusao: 'Esse momento marca oficialmente o início da campanha institucional dos 10 anos.',
   },

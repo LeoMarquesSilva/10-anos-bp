@@ -15,10 +15,10 @@ const links = [
   { id: 'hero', label: 'Início' },
   { id: 'visao', label: 'Visão' },
   { id: 'bloco01', label: 'Identidade' },
+  { id: 'cronograma', label: 'Cronograma' },
   { id: 'bloco02', label: 'Marketing Digital' },
   { id: 'bloco03', label: 'Audiovisual' },
   { id: 'bloco04', label: 'Evento' },
-  { id: 'cronograma', label: 'Cronograma' },
   { id: 'aplicacoes', label: 'Aplicações' },
   { id: 'orcamentos', label: 'Orçamentos' },
 ]

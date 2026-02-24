@@ -54,7 +54,7 @@ export function Block01() {
             <CardContent className="pt-0 space-y-4">
               <div>
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">
-                  Proposta do evento
+                  Proposta do encontro
                 </p>
                 <ul className="space-y-2">
                   {lancamento.proposta.map((p, i) => (

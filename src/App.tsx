@@ -17,10 +17,10 @@ function App() {
         <Hero />
         <Visao />
         <Block01 />
+        <Cronograma />
         <Block02 />
         <Block03 />
         <Block04 />
-        <Cronograma />
         <AplicacoesVisuais />
         <Orcamentos />
       </main>
