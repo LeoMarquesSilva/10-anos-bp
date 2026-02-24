@@ -1,0 +1,132 @@
+/* Hero: gradiente BP, conteúdo + selo */
+.heroSection {
+  min-height: 100vh;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #101f2e;
+  background: linear-gradient(70deg, rgba(16, 31, 46, 1) 25%, rgba(187, 159, 106, 0.86) 81%, rgba(26, 46, 71, 1) 100%);
+  scroll-margin-top: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 30% 50%, rgba(213, 177, 112, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr minmax(280px, 0.8fr);
+  }
+}
+
+.heroContent {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    text-align: left;
+  }
+}
+
+.heroBadge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--texto-branco);
+  margin: 0 0 0.75rem;
+}
+
+.heroSub {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem;
+  max-width: 42ch;
+}
+
+.heroContent .heroSub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .heroContent .heroSub {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--bg-azul);
+  background: var(--dourado);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.heroCta:hover {
+  background: var(--dourado-claro);
+  color: var(--bg-azul);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(213, 177, 112, 0.35);
+}
+
+.heroSeloWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSelo {
+  max-width: min(320px, 75vw);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.25));
+}
+
+@media (min-width: 768px) {
+  .heroSelo {
+    max-width: min(380px, 40vw);
+  }
+}

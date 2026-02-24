@@ -1,0 +1,48 @@
+.wrap {
+  padding: 0.5rem 0;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  color: var(--azul-marca);
+  margin-bottom: 1.5rem;
+}
+
+.sub {
+  margin-bottom: 2rem;
+}
+
+.sub:last-of-type {
+  margin-bottom: 0;
+}
+
+.sub h3 {
+  font-family: var(--font-heading);
+  color: var(--azul-marca);
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  font-weight: 600;
+  margin: 0.75rem 0 0.35rem;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+
+.lista li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--dourado);
+}

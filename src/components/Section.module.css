@@ -1,0 +1,75 @@
+.section {
+  position: relative;
+  min-height: 60vh;
+  padding: clamp(3rem, 7vw, 5.5rem) 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  scroll-margin-top: 3.5rem;
+}
+
+.section.claro {
+  background: var(--bg-branco);
+  color: var(--texto-escuro);
+}
+
+.section.azul {
+  background: var(--bg-azul-degrade);
+  color: var(--texto-branco);
+}
+
+.section.azul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 80% 50% at 20% 0%, var(--dourado-suave) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 40% at 90% 100%, var(--dourado-suave) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.section.azul h1,
+.section.azul h2,
+.section.azul h3 {
+  color: var(--texto-branco);
+}
+
+.section.azul p,
+.section.azul li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.seloWrap {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: clamp(80px, 12vw, 130px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.selo {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .seloWrap {
+    top: 1rem;
+    right: 1rem;
+    width: 64px;
+  }
+}

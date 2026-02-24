@@ -1,0 +1,48 @@
+.wrap {
+  padding: 0.5rem 0;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  color: var(--azul-marca);
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  color: var(--texto-escuro);
+}
+
+.objetivosLabel {
+  font-weight: 600;
+  color: var(--azul-marca);
+  margin-bottom: 0.75rem;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dourado);
+}
+
+.item:hover {
+  color: var(--azul-marca);
+}
