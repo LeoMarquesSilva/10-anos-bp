@@ -38,7 +38,7 @@ const totalSlides = itens.length
 
 export function Orcamentos() {
   const [page, setPage] = useState(0)
-  const [lightbox, setLightbox] = useState<string | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [quantidades, setQuantidades] = useState<number[]>(() =>
     itens.map((i) => i.quantidade)
   )
@@ -101,7 +101,7 @@ export function Orcamentos() {
                     <button
                       type="button"
                       className="aspect-[4/3] bg-black/20 overflow-hidden flex-shrink-0 flex items-center justify-center w-full cursor-pointer hover:opacity-95 transition-opacity"
-                      onClick={() => setLightbox(item.imagem)}
+                      onClick={() => setLightboxIndex(index)}
                       aria-label={`Ampliar imagem: ${item.descricao}`}
                     >
                       <img
@@ -255,33 +255,65 @@ export function Orcamentos() {
       </motion.div>
 
       <AnimatePresence>
-        {lightbox && (
+        {lightboxIndex !== null && (
           <motion.div
             className="fixed inset-0 z-[200] flex items-center justify-center bg-[#101f2e]/95 backdrop-blur-sm p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setLightbox(null)}
+            onClick={() => setLightboxIndex(null)}
           >
             <motion.div
-              className="relative max-w-[90vw] max-h-[85vh]"
+              className="relative max-w-[90vw] max-h-[85vh] flex items-center justify-center gap-2"
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               onClick={(e) => e.stopPropagation()}
             >
+              {totalSlides > 1 && (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="flex-shrink-0 rounded-full size-12 bg-[#101f2e]/90 border-white/20 text-white hover:bg-[var(--azul-marca)] hover:border-[var(--azul-marca)]"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setLightboxIndex((i) => (i === null ? null : Math.max(0, i - 1)))
+                  }}
+                  disabled={lightboxIndex <= 0}
+                  aria-label="Imagem anterior"
+                >
+                  <ChevronLeft className="size-6" />
+                </Button>
+              )}
               <img
-                src={lightbox}
-                alt=""
-                className="max-h-[85vh] w-auto rounded-lg shadow-2xl object-contain"
+                src={itens[lightboxIndex].imagem}
+                alt={itens[lightboxIndex].descricao}
+                className="max-h-[85vh] w-auto rounded-lg shadow-2xl flex-1 object-contain"
               />
+              {totalSlides > 1 && (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="flex-shrink-0 rounded-full size-12 bg-[#101f2e]/90 border-white/20 text-white hover:bg-[var(--azul-marca)] hover:border-[var(--azul-marca)]"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setLightboxIndex((i) => (i === null ? null : Math.min(totalSlides - 1, i + 1)))
+                  }}
+                  disabled={lightboxIndex >= totalSlides - 1}
+                  aria-label="Próxima imagem"
+                >
+                  <ChevronRight className="size-6" />
+                </Button>
+              )}
               <Button
                 type="button"
                 variant="ghost"
                 size="icon"
                 className="absolute -top-12 right-0 size-10 rounded-full bg-white/15 text-white hover:bg-white/25 text-2xl"
-                onClick={() => setLightbox(null)}
+                onClick={() => setLightboxIndex(null)}
                 aria-label="Fechar"
               >
                 ×
